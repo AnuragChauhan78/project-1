@@ -1,0 +1,167 @@
+n<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal Converter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Universal Converter</h1>
+            <p>Convert between different units with ease</p>
+        </header>
+
+        <div class="converter-tabs">
+            <button class="tab-btn active" data-tab="length">Length</button>
+            <button class="tab-btn" data-tab="weight">Weight</button>
+            <button class="tab-btn" data-tab="temperature">Temperature</button>
+            <button class="tab-btn" data-tab="currency">Currency</button>
+            <button class="tab-btn" data-tab="time">Time</button>
+        </div>
+
+        <div class="converter-content">
+            <!-- Length Converter -->
+            <div class="tab-pane active" id="length">
+                <div class="converter-form">
+<input type="number" id="length-input" placeholder="Enter value" step="any">
+                    <select id="length-from">
+                        <option value="meters">Meters</option>
+                        <option value="kilometers">Kilometers</option>
+                        <option value="centimeters">Centimeters</option>
+                        <option value="millimeters">Millimeters</option>
+                        <option value="miles">Miles</option>
+                        <option value="yards">Yards</option>
+                        <option value="feet">Feet</option>
+                        <option value="inches">Inches</option>
+                    </select>
+                    <span>to</span>
+                    <select id="length-to">
+                        <option value="meters">Meters</option>
+                        <option value="kilometers">Kilometers</option>
+                        <option value="centimeters">Centimeters</option>
+                        <option value="millimeters">Millimeters</option>
+                        <option value="miles">Miles</option>
+                        <option value="yards">Yards</option>
+                        <option value="feet">Feet</option>
+                        <option value="inches">Inches</option>
+                    </select>
+                    <button onclick="convertLength()">Convert</button>
+                    <button onclick="resetLength()">Reset</button>
+                </div>
+                <div class="result" id="length-result"></div>
+            </div>
+
+            <!-- Weight Converter -->
+            <div class="tab-pane" id="weight">
+                <div class="converter-form">
+                    <input type="number" id="weight-input" placeholder="Enter value" step="any">
+                    <select id="weight-from">
+                        <option value="kilograms">Kilograms</option>
+                        <option value="grams">Grams</option>
+                        <option value="milligrams">Milligrams</option>
+                        <option value="pounds">Pounds</option>
+                        <option value="ounces">Ounces</option>
+                        <option value="tons">Tons</option>
+                    </select>
+                    <span>to</span>
+                    <select id="weight-to">
+                        <option value="kilograms">Kilograms</option>
+                        <option value="grams">Grams</option>
+                        <option value="milligrams">Milligrams</option>
+                        <option value="pounds">Pounds</option>
+                        <option value="ounces">Ounces</option>
+                        <option value="tons">Tons</option>
+                    </select>
+                    <button onclick="convertWeight()">Convert</button>
+                </div>
+                <div class="result" id="weight-result"></div>
+            </div>
+
+            <!-- Temperature Converter -->
+            <div class="tab-pane" id="temperature">
+                <div class="converter-form">
+                    <input type="number" id="temp-input" placeholder="Enter value" step="any">
+                    <select id="temp-from">
+                        <option value="celsius">Celsius</option>
+                        <option value="fahrenheit">Fahrenheit</option>
+                        <option value="kelvin">Kelvin</option>
+                    </select>
+                    <span>to</span>
+                    <select id="temp-to">
+                        <option value="celsius">Celsius</option>
+                        <option value="fahrenheit">Fahrenheit</option>
+                        <option value="kelvin">Kelvin</option>
+                    </select>
+                    <button onclick="convertTemperature()">Convert</button>
+                </div>
+                <div class="result" id="temp-result"></div>
+            </div>
+
+            <!-- Currency Converter -->
+            <div class="tab-pane" id="currency">
+                <div class="converter-form">
+                    <input type="number" id="currency-input" placeholder="Enter value" step="any">
+                    <select id="currency-from">
+                        <option value="USD">USD</option>
+                        <option value="EUR">EUR</option>
+                        <option value="GBP">GBP</option>
+                        <option value="JPY">JPY</option>
+                        <option value="INR">INR</option>
+                        <option value="CAD">CAD</option>
+                        <option value="AUD">AUD</option>
+                    </select>
+                    <span>to</span>
+                    <select id="currency-to">
+                        <option value="USD">USD</option>
+                        <option value="EUR">EUR</option>
+                        <option value="GBP">GBP</option>
+                        <option value="JPY">JPY</option>
+                        <option value="INR">INR</option>
+                        <option value="CAD">CAD</option>
+                        <option value="AUD">AUD</option>
+                    </select>
+                    <button onclick="convertCurrency()">Convert</button>
+                </div>
+                <div class="result" id="currency-result"></div>
+                <div class="note">Note: Currency rates are approximate and may not reflect real-time values</div>
+            </div>
+
+            <!-- Time Converter -->
+            <div class="tab-pane" id="time">
+                <div class="converter-form">
+                    <input type="number" id="time-input" placeholder="Enter value" step="any">
+                    <select id="time-from">
+                        <option value="seconds">Seconds</option>
+                        <option value="minutes">Minutes</option>
+                        <option value="hours">Hours</option>
+                        <option value="days">Days</option>
+                        <option value="weeks">Weeks</option>
+                        <option value="months">Months</option>
+                        <option value="years">Years</option>
+                    </select>
+                    <span>to</span>
+                    <select id="time-to">
+                        <option value="seconds">Seconds</option>
+                        <option value="minutes">Minutes</option>
+                        <option value="hours">Hours</option>
+                        <option value="days">Days</option>
+                        <option value="weeks">Weeks</option>
+                        <option value="months">Months</option>
+                        <option value="years">Years</option>
+                    </select>
+                    <button onclick="convertTime()">Convert</button>
+                </div>
+                <div class="result" id="time-result"></div>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Universal Converter. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
