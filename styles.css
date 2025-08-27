@@ -1,0 +1,257 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+header {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.converter-tabs {
+    display: flex;
+    background: #f8f9fa;
+    border-bottom: 2px solid #e9ecef;
+    overflow-x: auto;
+}
+
+.tab-btn {
+    padding: 15px 20px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #6c757d;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    min-width: 120px;
+}
+
+.tab-btn:hover {
+    background: #e9ecef;
+    color: #495057;
+}
+
+.tab-btn.active {
+    background: white;
+    color: #007bff;
+    border-bottom: 3px solid #007bff;
+}
+
+.converter-content {
+    padding: 30px;
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.converter-form {
+    display: grid;
+    grid-template-columns: 1fr auto auto auto auto;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.converter-form input {
+    padding: 12px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.converter-form input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.converter-form select {
+    padding: 12px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    background: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.converter-form select:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.converter-form span {
+    font-weight: 500;
+    color: #495057;
+    text-align: center;
+}
+
+.converter-form button {
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.converter-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+.converter-form button:active {
+    transform: translateY(0);
+}
+
+/* Reset button specific styles */
+.converter-form button:nth-child(6) {
+    background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+}
+
+.converter-form button:nth-child(6):hover {
+    box-shadow: 0 4px 15px rgba(108, 117, 125, 0.3);
+}
+
+.result {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #007bff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #495057;
+    text-align: center;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.note {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #6c757d;
+    text-align: center;
+    font-style: italic;
+}
+
+footer {
+    background: #343a40;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+footer p {
+    opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        margin: 10px;
+        border-radius: 10px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .converter-tabs {
+        flex-wrap: wrap;
+    }
+    
+    .tab-btn {
+        min-width: 100px;
+        padding: 12px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .converter-form {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .converter-form input,
+    .converter-form select,
+    .converter-form button {
+        width: 100%;
+    }
+    
+    .converter-form span {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    
+    header {
+        padding: 20px 15px;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .converter-content {
+        padding: 20px 15px;
+    }
+    
+    .result {
+        font-size: 1.1rem;
+        padding: 15px;
+    }
+}
